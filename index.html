@@ -1,15 +1,15 @@
 <html>
 	<head>
-		<title>Food</title>
+		<title>FoodCorner</title>
 		<link href="style.css" rel="stylesheet" type="text/css">
-		<link href="bootstrap-3.3.7-dist/css/bootstrap-theme.min.css" rel="stylesheet">
 		<link href="bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
+		<link href="bootstrap-3.3.7-dist/css/bootstrap-theme.min.css" rel="stylesheet">
 		<link href="font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet">
 	</head>
 
 	<body>
 		<header>
-			<nav class="navbar navbar-default">
+			<nav class="navbar navbar-default navbar-fixed-top">
 			    	<div class="navbar-header">
 			      		<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
 					        <span class="icon-bar"></span>
@@ -20,12 +20,12 @@
 			    </div>
 			    <div class="nav navbar-nav navbar-right collapse navbar-collapse" id="myNavbar">
 			      	<ul class="nav navbar-nav">
-								<li><a href="">About</a></li>
-								<li><a href="">FOOD ORDERS</a></li>
-								<li><a href="">TESTIMONIALS</a></li>
-								<li><a href="">OUR CITIES</a></li>
-								<li><a href="">SERVICES</a></li>
-								<li><a href="">Contact</a></li>
+								<li><a href="#about">About</a></li>
+								<li><a href="#order">FOOD ORDERS</a></li>
+								<li><a href="#testimonials">TESTIMONIALS</a></li>
+								<li><a href="#cities">OUR CITIES</a></li>
+								<li><a href="#work">SERVICES</a></li>
+								<li><a href="#contact">Contact&emsp;</a></li>
 			      	</ul>
 			    </div>
 			</nav>
@@ -58,7 +58,7 @@
 			</div>
 		</div>
 
-		<section class="features">
+		<section class="features" id="about">
 			<h2 class="text-center">GET FOOD FAST &mdash; NOT FAST FOOD</h2>
 			<p class="features-para">Hello, we're Xyzfood, your new premium food delivery service. We know you're always busy. No time for cooking. So let us take care of that, we're really good at it. Your new premium food delivery service. We know you're always busy. No time for cooking. So let us take care of that, we're really good at it, we promise!</p>
 			<div class="container">
@@ -90,7 +90,7 @@
 			</div>
 		</section>
 
-		<section class="showcase">
+		<section class="showcase" id="order">
 			<div class="container-fluid">
 				<div class="row">
 					<div class="col-md-3 col-sm-6 col-xs-12">
@@ -130,7 +130,7 @@
 			</div>
 		</section>
 
-		<section class="cities">
+		<section class="cities" id="cities">
 			<h2 class="text-center">WE ARE CURRENTLY IN THESE CITIES</h2>
 			<div class="container">
 				<div class="row">
@@ -169,7 +169,7 @@
 			</div>
 		</section>
 
-		<section class="work">
+		<section class="work" id="work">
 			<h2 class="text-center">HOW IT WORKS</h2>
 			<div class="container">
 				<div classs="row">
@@ -195,7 +195,7 @@
 			</div>
 		</section>
 
-		<section class=" testimonials">
+		<section class=" testimonials" id="testimonials">
 			<h2 class="text-center">OUR CUSTOMER CAN'T LIVE WITHOUT US</h2>
 			<div class="container">
 				<div class="row">
@@ -220,7 +220,7 @@
 			</div>
 		</section>
 
-		<section class="form">
+		<section class="form" id="contact">
 			<h2 class="text-center">WE'RE HAPPY TO HEAR FROM YOU</h2>
 			<div class="container">
 				<div class="row">
@@ -244,11 +244,11 @@
 				<div class="row">
 					<div class="col-md-8 end">
 						<ul>
-							<li><a href="">About us</a></li>
-							<li><a href="">Blog</a></li>
-							<li><a href="">Press</a></li>
-							<li><a href="">iOS App</a></li>
-							<li><a href="">Android App</a></li>
+							<li><a href="#">About us</a></li>
+							<li><a href="#">Blog</a></li>
+							<li><a href="#">Press</a></li>
+							<li><a href="#">iOS App</a></li>
+							<li><a href="#">Android App</a></li>
 						</ul>
 					</div>
 
@@ -267,8 +267,34 @@
 		</section>
 
 		<!-- Placed at the end of the document so the pages load faster -->
-	     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+	     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+			 <script>
+				 $(document).ready(function(){
+					 // Add smooth scrolling to all links
+					 $('a[href^="#"]').on('click', function(event) {
+
+						 // Make sure this.hash has a value before overriding default behavior
+						 if (this.hash !== "") {
+							 // Prevent default anchor click behavior
+							 event.preventDefault();
+
+							 // Store hash
+							 var hash = this.hash;
+
+							 // Using jQuery's animate() method to add smooth page scroll
+							 // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+							 $('html, body').animate({
+								 scrollTop: $(hash).offset().top
+							 }, 800, function(){
+
+								 // Add hash (#) to URL when done scrolling (default click behavior)
+								 window.location.hash = hash;
+							 });
+						 } // End if
+					 });
+				 });
+			 </script>
 
 	</body>
 </html>
